@@ -1,0 +1,19 @@
+# Auto Dork Tool
+
+import requests
+from termcolor import colored
+
+def search_dork(dork):
+    url = f"https://www.example.com/search?q={dork}"  # Replace with actual search URL
+    response = requests.get(url)
+    return response.text
+
+def main():
+    print(colored("Welcome to the Auto Dork Tool", 'cyan'))
+    dork = input(colored("Please paste your dork: ", 'green'))
+    results = search_dork(dork)
+    print(colored("Search Results:", 'cyan'))
+    print(results)
+
+if __name__ == "__main__":
+    main()
